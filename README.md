@@ -1,40 +1,34 @@
-# RoR
-This repo provides the code for reproducing the experiments in Findings-EMNLP 2021 paper: [RoR: Read-over-Read for Long Document Machine Reading Comprehension](https://aclanthology.org/2021.findings-emnlp.160.pdf). This code is adapted from the repos of  [longformer](https://github.com/allenai/longformer).
+# FCA-BERT
+This repo provides the code for reproducing the experiments in ACL-2022 paper: [Fine- and Coarse-Granularity Hybrid Self-Attention for Efficient BERT](https://arxiv.org/pdf/2203.09055.pdf). This code is adapted from the repos of  [PoWER-BERT](https://github.com/IBM/PoWER-BERT).
 
-<p align="center"><img src="/RoR.png" width=700></p>
-<p align="center"><i>Figure : Illustrations of RoR framework</i></p>
 
 
 ## Environment
-transformers==2.11.0 <br>
-torch>=1.6.0 <br>
-pytorch-lightning==1.2.0 <br>
-test-tube==0.7.5 
+transformers==1.15.0 <br>
+keras==2.3.0 <br>
+keras_bert==0.60.0  
 
 
-## TriviaQA
-We currently only open source the code in the TriviaQA dataset. To reproduce the results, you don’t have to train any model and can use the pretrained [triviaqa-longformer-large](https://ai2-s2-research.s3-us-west-2.amazonaws.com/longformer/triviaqa-longformer-large.tar.gz) to infer directly. The detailed inference steps are given in the inference.txt.
+## Dataset
+Before running this Repo you should download the [GLUE](https://gluebenchmark.com/tasks) data and then use this [script](https://gist.github.com/W4ngatang/60c2bdb54d156a41194446737ce03e2e) to unpack it to some directory '$GLUE_DIR'. Also, download the tf-version pre-trained checkpoint([BERT-base/large](https://github.com/google-research/bert), [ELECTRA-base/large](https://github.com/google-research/electra), Distil-BERT etc.) and unzip it to some directory '$BERT_DIR'. 
+
+## Running
+The detailed training and inference steps including the parameters are given in the run.sh.
 
 
 ## Citation
 
 ```
-@inproceedings{zhao-etal-2021-ror-read,
-    title = "{R}o{R}: Read-over-Read for Long Document Machine Reading Comprehension",
+@inproceedings{zhao-etal-FCA,
+    title = "Fine- and Coarse-Granularity Hybrid Self-Attention for Efficient BERT",
     author = "Zhao, Jing  and
+      Wang, yifan  and
       Bao, Junwei  and
-      Wang, Yifan  and
-      Zhou, Yongwei  and
       Wu, Youzheng  and
-      He, Xiaodong  and
-      Zhou, Bowen",
-    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2021",
-    month = nov,
-    year = "2021",
-    address = "Punta Cana, Dominican Republic",
+      He, Xiaodong",
+    booktitle = "ACL  2022",
+    year = "2022",
     publisher = "Association for Computational Linguistics",
-    url = "https://aclanthology.org/2021.findings-emnlp.160",
-    pages = "1862--1872",
 }
 
 ```
