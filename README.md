@@ -4,7 +4,7 @@ This repo provides the code for reproducing the experiments in ACL-2022 paper: [
 
 
 ## Environment
-transformers==1.15.0 <br>
+tensorflow-gpu==1.15.0 <br>
 keras==2.3.0 <br>
 keras_bert==0.60.0  
 
